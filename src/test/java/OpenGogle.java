@@ -2,6 +2,8 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.testng.annotations.Test;
 
 public class OpenGogle {
@@ -23,5 +25,17 @@ public class OpenGogle {
 
         WebDriver driverF = new FirefoxDriver();
         driverF.get("https://www.google.pl/");
+    }
+
+    @Test
+    public void OpenGoogleIe(){
+
+        String path = "D:\\NAUKA AUTOMATÓW\\IEDriverServer_x64_4.0.0\\IEDriverServer.exe";
+        System.setProperty("webdriver.ie.driver",path);
+        InternetExplorerOptions options = new InternetExplorerOptions();
+        options.withInitialBrowserUrl("https://www.google.pl/");
+
+        WebDriver driver = new InternetExplorerDriver(options);
+
     }
 }
