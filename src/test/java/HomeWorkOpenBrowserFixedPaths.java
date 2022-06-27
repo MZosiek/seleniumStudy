@@ -1,3 +1,4 @@
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,9 @@ public class HomeWorkOpenBrowserFixedPaths {
         public void OpeningTests(){
 
             OpenBrowser("chrome","https://kursy.testeroprogramowania.pl/");
+
+
+
 
             OpenBrowser("firefox" , "https://film.org.pl/");
 
@@ -37,9 +41,12 @@ public class HomeWorkOpenBrowserFixedPaths {
             if (browser.equals("chrome")){
                 WebDriver driver = new ChromeDriver();
                 driver.get(address);
+                driver.manage().window().maximize();  // < maxymalizowanie rozmiaru okna
             } else if ( browser.equals("firefox")){
                 WebDriver driver = new FirefoxDriver();
                 driver.get(address);
+                Dimension windowSize = new Dimension(1920,1600);
+                driver.manage().window().setSize(windowSize);
             } else if (browser.equals("internetexplorer")){
                 WebDriver driver = new InternetExplorerDriver();
                 driver.get(address);
