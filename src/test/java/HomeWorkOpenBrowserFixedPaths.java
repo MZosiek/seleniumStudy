@@ -14,12 +14,7 @@ public class HomeWorkOpenBrowserFixedPaths {
 
             OpenBrowser("chrome","https://kursy.testeroprogramowania.pl/");
 
-
-
-
             OpenBrowser("firefox" , "https://film.org.pl/");
-
-
 
         }
 

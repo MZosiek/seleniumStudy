@@ -12,23 +12,23 @@ public class HomeWorkOpenBrowser {
     @Test
     public void OpeningTests(){
 
-        OpenBrowser("firefox","https://kursy.testeroprogramowania.pl/");
+        OpenBrowser("chrome","https://kursy.testeroprogramowania.pl/");
 
-        OpenBrowser("firefox" , "https://film.org.pl/");
+        OpenBrowser("chrome" , "https://film.org.pl/");
 
     }
 
     public static void OpenBrowser(String browser, String address){
 
         String path = "D:\\NAUKA AUTOMATÓW\\chromedriver_win32\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver" , path);
+       System.setProperty("webdriver.chrome.driver" , path);
 
-        String path1 = "D:\\NAUKA AUTOMATÓW\\geckodriver-v0.31.0-win64\\geckodriver.exe";
-        System.setProperty("webdriver.gecko.driver", path1);
+     //   String path1 = "D:\\NAUKA AUTOMATÓW\\geckodriver-v0.31.0-win64\\geckodriver.exe";
+     //   System.setProperty("webdriver.gecko.driver", path1);
 
 
-        String path2 = "D:\\NAUKA AUTOMATÓW\\IEDriverServer_x64_4.0.0\\IEDriverServer.exe";
-        System.setProperty("webdriver.ie.driver",path2);
+      //  String path2 = "D:\\NAUKA AUTOMATÓW\\IEDriverServer_x64_4.0.0\\IEDriverServer.exe";
+     //   System.setProperty("webdriver.ie.driver",path2);
         InternetExplorerOptions options = new InternetExplorerOptions();
         options.withInitialBrowserUrl("https://www.google.pl/");
 

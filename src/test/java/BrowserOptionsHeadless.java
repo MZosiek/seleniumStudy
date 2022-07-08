@@ -17,6 +17,7 @@ public class BrowserOptionsHeadless {
         options.setHeadless(true);  // <- nie bedzie włączał przeglądarki UI przy testach
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT); // <- zaakceptuje okienka jeżeli jakieś się pojawią w czsaie testów
 
+
         WebDriver driver = new ChromeDriver(options);
 
     }
