@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,8 @@ public class CssFinding {
 
     @Test
     public void CssTests(){
+
+        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
         Duration duration = Duration.ofSeconds(15);
@@ -43,12 +46,16 @@ public class CssFinding {
         WebElement CssFieldLikeNameStarte = driver.findElement(By.cssSelector("[value^='fe']")); /*wyszukuje po początku nazwy*/
         WebElement CssieldLikeNameEnd = driver.findElement(By.cssSelector("[value$='le']")); /*wyszkuje po końcu nazwy*/
 
+        WebElement CssFirstChild = driver.findElement(By.cssSelector("li:first-child"));
+        WebElement CssLastChidl = driver.findElement(By.cssSelector("li:last-child"));
+        WebElement NumberedChild = driver.findElement(By.cssSelector("li:nth-child(2)"));
+
 
         // new WebDriverWait(driver,duration);
 
-         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+     //    driver.manage().timeouts().implicitlyWait(duration);
 
-        driver.close();
+    //    driver.close();
 
     }
 }
