@@ -41,7 +41,9 @@ public class HomeWorkKmf {
 
       //  WebElement result = driver.findElement(By.cssSelector("#section-product-grid > div > div.productGrid__wrapper.xlt-searchresults > ul > li:nth-child(48) > div > div.productTile__productSummary > div.productTile__productSummaryLeft > div.productTile__productName"));
 
-        WebElement result = driver.findElement(By.cssSelector("#app > main > div:nth-child(6) > div > div > div:nth-child(1) > div > div > div > div.contentHeroType2__header > h2"));
+       // WebElement result = driver.findElement(By.cssSelector("#app > main > div:nth-child(6) > div > div > div:nth-child(1) > div > div > div > div.contentHeroType2__header > h2"));
+
+        WebElement result = driver.findElement(By.xpath("//div/div/div[contains(text(),'Spectral:ON CF 7')]"));
 
         Assert.assertTrue(result.isDisplayed());
 
