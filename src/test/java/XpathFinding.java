@@ -40,6 +40,35 @@ public class XpathFinding {
 
         /* ends-with działa na xpath 2.0 - wiec jest szansa że to nie bedzie działać - ale jak chcesz znaleźć element kończący się na coś to mozna przez substring*/
 
-        WebElement elementEndsWith = driver.findElement(By.xpath("//*[substring(@name, string-length(@name)-string-length('name')+1)='name']"));
+        WebElement child = driver.findElement(By.xpath("//div/child::ul"));   // znajduje childa- czyli pierwszego poniżej w hierarchi
+
+        WebElement childOtherWay = driver.findElement(By.xpath("//div//ul")); // wszystkie childy danego elementu ( tez te zagnieżdzone)
+
+        WebElement childDescendant = driver.findElement(By.xpath("//div/descendant::ul")); // inny zapis tego co wyżęj
+
+        WebElement descendantAll = driver.findElement(By.xpath("//div/descendant::*")); //wszystkie childy danego elementu ( też te niżej zagnieżdzone)
+
+        WebElement ancestorAll = driver.findElement(By.xpath("//div/ancestor::*"));  // wszystkie elementy wyżej w hierarchii ( odwrotny do descendant)
+
+        WebElement ancestorDifferent = driver.findElement(By.xpath("//div/../.."));  // inna forma zapisu ( tu można sterować poziomami)
+
+        WebElement followingElement = driver.findElement(By.xpath("//img/following::*")); // wszystkie elementy następujące po elemenecie ( każdy poziom)
+
+        WebElement followingSibling = driver.findElement(By.xpath("//img/following-sibling::*")); // wszystkie elementy następujące po elemencie na tym samym poziomie hierarchi
+
+        WebElement precending = driver.findElement(By.xpath("//img/preceding::*")); // wszystkie elementy przed elementem ( kazdy poziom )
+
+        WebElement precendingSibling = driver.findElement(By.xpath("//img/preceding-sibling::*")); //wszystkie elementy przed elementem na tym samym poziomie hierarchi
+
+        WebElement joining = driver.findElement(By.xpath("//input | //a")); // łączy wybór wszystkich inputów i linków
+
+        WebElement andClause = driver.findElement(By.xpath("//input[@name='fname' and @id='fname']")); // 'and' - muszą być spełnione oba warunki
+
+        WebElement orClause = driver.findElement(By.xpath("//input[@name='fname' or @id='fname']")); // musi być spełnione jedno albo drugie
+
+        WebElement andContains = driver.findElement(By.xpath("//input[@name='fname' or contains(@id,fnam)]")); //'or' z metodą contains
+
+
+
     }
 }
