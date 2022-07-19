@@ -33,6 +33,12 @@ public class BasicActions {
         clearAndText.clear();  //<czyszczenie
         clearAndText.sendKeys("Mój Text");
 
+        // pobieranie wartości pola
+        System.out.println(clearAndText.getAttribute("value"));
+
+
+
+
         //wprowadzanie przycisków z klawiatury
         clearAndText.sendKeys(Keys.ENTER);
 
@@ -57,5 +63,20 @@ public class BasicActions {
         for (WebElement option : carlist ) {
             System.out.println(option.getText());
         }
+
+
+      //      System.out.println(clearAndText.getText()); // tutaj nic się nie wypisze bo wcześniej wartość byłą wyczyszczona
+         // tutaj pojawi się aktualna wartość pola
+
+        //pobieranie wartości ukrytego pola
+        WebElement para = driver.findElement(By.cssSelector(".topSecret"));
+        System.out.println(para.getText()); // < ten nie zadziala
+        System.out.println(para.getAttribute("value")); // ten nie zadzialą - pokaże wartość 'null'
+        System.out.println(para.getAttribute("textContent")); // ten pokaże wartość
+
+
+
+
+
     }
 }

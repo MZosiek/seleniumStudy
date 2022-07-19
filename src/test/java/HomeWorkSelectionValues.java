@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeWorkSelectionValues {
@@ -27,31 +28,41 @@ public class HomeWorkSelectionValues {
         Select carsValues = new Select(selector);
 
         List<WebElement> cars = carsValues.getOptions();
-        for( WebElement test1 : cars){
+        List<String> carsOptions = new ArrayList<>();
+
+        for (WebElement test2: cars){
+            carsOptions.add(test2.getText());
+        }
+
+        /*for( WebElement test1 : cars){
             System.out.println(test1.getText());
         }
 
-        comparision(value,cars);
+         */
+
+        System.out.println( comparision(value,carsOptions));
+
+        driver.quit();
 
 
     }
 
-    public void comparision(String value1, List values2) {
+    public String comparision(String value1, List values2) {
 
-      /*  for(int i = 0; i< List.of(values2).size(); i++){
-            if(value1.equals()){
+        for (Object option : values2){
+            System.out.println(option);
+        }
 
-            }
 
-
-            */
-        for (WebElement option: values2) {
-            System.out.println(option.getText());
+            if (values2.contains(value1)){
+                return "Element " + value1 + " zawiera się w liście" ;
+            }else {
+                return "Element " + value1 + " nie zawiera się w liście";
             }
         }
 
 
-       // return "Nie znaleziono elementu " + value1 + " na liście";
+
 
 
 }
